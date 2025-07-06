@@ -1,0 +1,172 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - HiHa EXCLUSIVE DINER</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ONE CHEF, ONE GUEST, ONE UNIQUE EXPERIENCE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chefs.html">Our Chefs</a></li>
+        <li><a href="menu-selection.html">Menu</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Get in Touch</h2>
+      <p>We'd love to hear from you and answer any questions</p>
+    </section>
+
+    <section class="contact-content">
+      <div class="contact-info">
+        <h3>Restaurant Information</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <h4>📍 Address</h4>
+            <p>Richmond, BC<br>Canada</p>
+          </div>
+          
+          <div class="info-item">
+            <h4>📞 Phone</h4>
+            <p> +1 236-333-6744</p>
+          </div>
+          
+          <div class="info-item">
+            <h4>✉️ Email</h4>
+            <p>harsh.rana1@student.kpu.ca</p>
+          </div>
+          
+          <div class="info-item">
+            <h4>🕒 Hours</h4>
+            <p>Lunch: 12:00 PM - 3:00 PM<br>
+            Dinner: 6:00 PM - 10:00 PM<br>
+            Closed on Mondays</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send us a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Phone</label>
+            <input type="tel" id="contact-phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <select id="contact-subject" name="subject">
+              <option value="">Select subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="booking">Booking Question</option>
+              <option value="menu">Menu Inquiry</option>
+              <option value="feedback">Feedback</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Please tell us how we can help you..."></textarea>
+          </div>
+
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="location-info">
+      <h3>How to Find Us</h3>
+      <div class="location-details">
+        <div class="transport-info">
+          <h4>🚇 By Metro</h4>
+          <p>Canada Line Brighouse Station</p>
+          
+          <h4>🚌 By Bus</h4>
+          <p>Available Services</p>
+          
+          <h4>🚗 By Car</h4>
+          <p>Parking available on-site<br>
+          Valet service available</p>
+        </div>
+        
+        <div class="special-info">
+          <h4>Special Accommodations</h4>
+          <ul>
+            <li>Wheelchair accessible</li>
+            <li>Private dining rooms available</li>
+            <li>Outdoor seating (weather permitting)</li>
+            <li>Valet parking service</li>
+            <li>Special dietary accommodations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; HiHa EXCLUSIVE DINER. All rights reserved.</p>
+  </footer>
+
+  <script src="alerts.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading message
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
+      
+      // Prepare form data for Formspree
+      const formData = new FormData(this);
+      formData.append('_subject', 'Contact Form - HiHa EXCLUSIVE DINER');
+      
+      // Submit to Formspree using fetch
+      fetch('https://formspree.io/f/movwzrle', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          showContactSuccessAlert();
+          
+          // Reset form
+          this.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        showContactErrorAlert();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html> 

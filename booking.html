@@ -1,0 +1,230 @@
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now - HiHa EXCLUSIVE DINER</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ONE CHEF, ONE GUEST, ONE UNIQUE EXPERIENCE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chefs.html">Our Chefs</a></li>
+        <li><a href="menu-selection.html">Menu</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Reserve Your Exclusive Dining Experience</h2>
+      <p>Book your personalized culinary journey with our master chefs</p>
+    </section>
+
+    <section class="booking-form">
+      <div class="form-container">
+        <h3>Personal Information</h3>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests">
+              <option value="">Select number of guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+            </select>
+          </div>
+
+          <h3>Reservation Details</h3>
+          
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time">
+              <option value="">Select time</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="12:30">12:30 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="13:30">1:30 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="18:30">6:30 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="19:30">7:30 PM</option>
+              <option value="20:00">8:00 PM</option>
+              <option value="20:30">8:30 PM</option>
+              <option value="21:00">9:00 PM</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="occasion">Special Occasion (Optional)</label>
+            <select id="occasion" name="occasion">
+              <option value="">Select occasion</option>
+              <option value="anniversary">Anniversary</option>
+              <option value="birthday">Birthday</option>
+              <option value="proposal">Proposal</option>
+              <option value="business">Business Dinner</option>
+              <option value="celebration">Celebration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dietary">Dietary Restrictions</label>
+            <textarea id="dietary" name="dietary" placeholder="Any allergies, dietary restrictions, or special requirements?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="special-requests">Special Requests</label>
+            <textarea id="special-requests" name="special-requests" placeholder="Any special requests or preferences?"></textarea>
+          </div>
+
+          <div class="booking-summary">
+            <h3>Your Selection Summary</h3>
+            <div id="selection-summary">
+              <p>Please complete your menu selection first</p>
+            </div>
+          </div>
+
+          <!-- Hidden fields for Formspree -->
+          <input type="hidden" name="selectedChef" id="hiddenChef">
+          <input type="hidden" name="selectedDishes" id="hiddenDishes">
+          <input type="hidden" name="sizePreferences" id="hiddenSizePreferences">
+          <input type="hidden" name="menuSpecialRequests" id="hiddenSpecialRequests">
+
+          <div class="form-actions">
+            <button type="submit" class="cta-button">Confirm Reservation</button>
+            <a href="menu-selection.html" class="cta-button">Back to Menu Selection</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; HiHa EXCLUSIVE DINER. All rights reserved.</p>
+  </footer>
+
+  <script src="alerts.js"></script>
+  <script>
+    // Redirect if no menu selection
+    if (!localStorage.getItem('selectedDishesWithSizes') || JSON.parse(localStorage.getItem('selectedDishesWithSizes')).length === 0) {
+      showBookingRedirectAlert();
+    }
+
+    // Load saved menu selection
+    window.onload = function() {
+      const selectedChef = localStorage.getItem('selectedChef');
+      const selectedDishesWithSizes = JSON.parse(localStorage.getItem('selectedDishesWithSizes') || '[]');
+      const specialRequests = localStorage.getItem('specialRequests');
+      
+      if (selectedChef) {
+        const summaryDiv = document.getElementById('selection-summary');
+        let summaryHTML = `<p><strong>Selected Chef:</strong> ${selectedChef}</p>`;
+        
+        if (selectedDishesWithSizes.length > 0) {
+          summaryHTML += `<p><strong>Selected Dishes:</strong></p><ul>`;
+          selectedDishesWithSizes.forEach(dish => {
+            const sizeText = dish.size !== 'regular' ? ` (${dish.size})` : '';
+            summaryHTML += `<li>${dish.item}${sizeText}</li>`;
+          });
+          summaryHTML += `</ul>`;
+        }
+        
+        if (specialRequests) {
+          summaryHTML += `<p><strong>Special Requests:</strong> ${specialRequests}</p>`;
+        }
+        
+        summaryDiv.innerHTML = summaryHTML;
+        
+        // Populate hidden fields for Formspree
+        document.getElementById('hiddenChef').value = selectedChef;
+        document.getElementById('hiddenDishes').value = JSON.stringify(selectedDishesWithSizes);
+        document.getElementById('hiddenSpecialRequests').value = specialRequests || '';
+      }
+    };
+
+    // Form submission
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get menu selection data
+      const selectedChef = localStorage.getItem('selectedChef');
+      const selectedDishesWithSizes = JSON.parse(localStorage.getItem('selectedDishesWithSizes') || '[]');
+      const specialRequests = localStorage.getItem('specialRequests');
+      
+      // Update hidden fields
+      document.getElementById('hiddenChef').value = selectedChef || '';
+      document.getElementById('hiddenDishes').value = JSON.stringify(selectedDishesWithSizes);
+      document.getElementById('hiddenSpecialRequests').value = specialRequests || '';
+      
+      // Show loading message
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Submitting...';
+      submitButton.disabled = true;
+      
+      // Prepare form data for Formspree
+      const formData = new FormData(this);
+      formData.append('_subject', 'New Booking - HiHa EXCLUSIVE DINER');
+      
+      // Submit to Formspree using fetch
+      fetch('https://formspree.io/f/movwzrle', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          showBookingSuccessAlert();
+          
+          // Clear localStorage
+          localStorage.removeItem('selectedChef');
+          localStorage.removeItem('selectedDishesWithSizes');
+          localStorage.removeItem('specialRequests');
+          
+          // Redirect to home page
+          window.location.href = 'index.html';
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        showBookingErrorAlert();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html> 

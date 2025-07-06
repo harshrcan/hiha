@@ -1,0 +1,593 @@
+/* css/style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('img1.jpg') repeat;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px; /* Space for footer */
+}
+
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header h1.center {
+  margin: 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Updated navbar styles for horizontal alignment */
+nav {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+main .hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  color: white;
+  margin: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #e63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.cta-button:hover {
+  background-color: #d62828;
+}
+
+.restaurant-description {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.restaurant-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Chef Cards Grid */
+.chefs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.chef-card {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.chef-card:hover {
+  transform: translateY(-5px);
+}
+
+.chef-card h3 {
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+.chef-card p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* Menu Selection Styles */
+.menu-selection {
+  padding: 2rem;
+  margin: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.selection-step {
+  margin-bottom: 3rem;
+}
+
+.selection-step h3 {
+  color: #e63946;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.menu-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+}
+
+.dish-selection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.course-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.course-section h4 {
+  color: #e63946;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dish-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dish-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dish-options label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dish-options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e63946;
+}
+
+/* New dish item layout */
+.dish-item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dish-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dish-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.dish-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.dish-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.3rem;
+}
+
+.dish-info label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.dish-info input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e63946;
+}
+
+.item-size {
+  margin-top: 0.4rem;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #e63946;
+  font-size: 0.65rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.item-size:focus {
+  outline: none;
+  border: 2px solid #b71c1c;
+}
+
+/* Remove the separate price styling */
+.price {
+  display: none;
+}
+
+#special-requests {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Booking Form Styles */
+.booking-form {
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.form-container {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-container h3 {
+  color: #e63946;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.booking-summary {
+  background: rgba(230, 57, 70, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #e63946;
+}
+
+.booking-summary h3 {
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+.booking-summary ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.secondary-button {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: #e63946;
+}
+
+/* Contact Page Styles */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.contact-info,
+.contact-form {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  color: #e63946;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.info-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.info-item h4 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.location-info {
+  padding: 2rem;
+  margin: 2rem;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              rgba(0,0,0,0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.location-info h3 {
+  color: #e63946;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.location-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.transport-info h4,
+.special-info h4 {
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+.special-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.special-info li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.special-info li:last-child {
+  border-bottom: none;
+}
+
+/* Size Selection Styles */
+.size-selection {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.size-selection p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.size-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.size-category {
+  background: rgba(230, 57, 70, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.size-category h4 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.size-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .location-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .dish-selection {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-actions,
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chefs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .size-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .dish-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dish-image {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    align-self: center;
+  }
+}

@@ -1,0 +1,402 @@
+<!-- menu-selection.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Selection - HiHa EXCLUSIVE DINER</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ONE CHEF, ONE GUEST, ONE UNIQUE EXPERIENCE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chefs.html">Our Chefs</a></li>
+        <li><a href="menu-selection.html">Menu</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Choose Your Culinary Journey</h2>
+      <p>Select your chef and customize your dining experience</p>
+    </section>
+
+    <section class="menu-selection">
+      <div class="selection-step">
+        <h3>Step 1: Choose Your Chef</h3>
+        <div class="chef-selection">
+          <select id="chef-select" class="menu-select">
+            <option value="">Select a Chef</option>
+            <option value="rajesh">Chef Rajesh Kumar - North Indian</option>
+            <option value="priya">Chef Priya Sharma - South Indian</option>
+            <option value="amit">Chef Amit Patel - Mughlai</option>
+            <option value="meera">Chef Meera Iyer - Coastal Seafood</option>
+            <option value="sanjay">Chef Sanjay Verma - Tandoori</option>
+            <option value="lakshmi">Chef Lakshmi Devi - Vegetarian</option>
+            <option value="arjun">Chef Arjun Singh - Street Food Fusion</option>
+            <option value="kavita">Chef Kavita Reddy - Hyderabadi</option>
+            <option value="ramesh">Chef Ramesh Nair - Kerala</option>
+            <option value="sunita">Chef Sunita Kapoor - Punjabi Dhaba</option>
+            <option value="deepak">Chef Deepak Malhotra - Rajasthani</option>
+            <option value="anjali">Chef Anjali Desai - Gujarati</option>
+            <option value="vikram">Chef Vikram Joshi - Maharashtrian</option>
+            <option value="rekha">Chef Rekha Menon - Chettinad</option>
+            <option value="harish">Chef Harish Kumar - Awadhi</option>
+            <option value="sita">Chef Sita Raman - Bengali</option>
+            <option value="manoj">Chef Manoj Tiwari - Bihari</option>
+            <option value="radha">Chef Radha Krishnan - Tamil Brahmin</option>
+            <option value="prakash">Chef Prakash Sharma - Kashmiri</option>
+            <option value="geeta">Chef Geeta Patel - Sindhi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="selection-step">
+        <h3>Step 2: Choose Your Dishes</h3>
+        <div class="dish-selection">
+          <div class="course-section">
+            <h4>Appetizers</h4>
+            <div class="dish-options">
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="samosa_chaat.jpg" alt="Samosa Chaat">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="appetizer" value="samosa"> Samosa Chaat</label>
+                  <select class="item-size" data-item="samosa">
+                    <option value="regular">Regular ₹180</option>
+                    <option value="large">Large ₹230</option>
+                    <option value="extra-large">Extra Large ₹280</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="paneer_tikka.jpg" alt="Paneer Tikka">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="appetizer" value="paneer"> Paneer Tikka</label>
+                  <select class="item-size" data-item="paneer">
+                    <option value="regular">Regular ₹220</option>
+                    <option value="large">Large ₹270</option>
+                    <option value="extra-large">Extra Large ₹320</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="dahi_puri.jpg" alt="Dahi Puri">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="appetizer" value="dahi"> Dahi Puri</label>
+                  <select class="item-size" data-item="dahi">
+                    <option value="regular">Regular ₹160</option>
+                    <option value="large">Large ₹210</option>
+                    <option value="extra-large">Extra Large ₹260</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="medu_vada.jpg" alt="Medu Vada">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="appetizer" value="vada"> Medu Vada</label>
+                  <select class="item-size" data-item="vada">
+                    <option value="regular">Regular ₹140</option>
+                    <option value="large">Large ₹190</option>
+                    <option value="extra-large">Extra Large ₹240</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-section">
+            <h4>Main Course</h4>
+            <div class="dish-options">
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="butter_chicken.jpg" alt="Butter Chicken">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="main" value="butter-chicken"> Butter Chicken</label>
+                  <select class="item-size" data-item="butter-chicken">
+                    <option value="regular">Regular ₹320</option>
+                    <option value="large">Large ₹420</option>
+                    <option value="extra-large">Extra Large ₹520</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="biryani.jpg" alt="Biryani">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="main" value="biryani"> Biryani</label>
+                  <select class="item-size" data-item="biryani">
+                    <option value="regular">Regular ₹380</option>
+                    <option value="large">Large ₹480</option>
+                    <option value="extra-large">Extra Large ₹580</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="dal_makhani.jpg" alt="Dal Makhani">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="main" value="dal-makhani"> Dal Makhani</label>
+                  <select class="item-size" data-item="dal-makhani">
+                    <option value="regular">Regular ₹280</option>
+                    <option value="large">Large ₹380</option>
+                    <option value="extra-large">Extra Large ₹480</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="paneer_butter_masala.jpg" alt="Paneer Butter Masala">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="main" value="paneer-butter"> Paneer Butter Masala</label>
+                  <select class="item-size" data-item="paneer-butter">
+                    <option value="regular">Regular ₹300</option>
+                    <option value="large">Large ₹400</option>
+                    <option value="extra-large">Extra Large ₹500</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-section">
+            <h4>Breads & Rice</h4>
+            <div class="dish-options">
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="butter_naan.jpg" alt="Butter Naan">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="bread" value="naan"> Butter Naan</label>
+                  <select class="item-size" data-item="naan">
+                    <option value="regular">Regular ₹60</option>
+                    <option value="large">Large ₹90</option>
+                    <option value="extra-large">Extra Large ₹120</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="tandoori_roti.jpg" alt="Tandoori Roti">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="bread" value="roti"> Tandoori Roti</label>
+                  <select class="item-size" data-item="roti">
+                    <option value="regular">Regular ₹40</option>
+                    <option value="large">Large ₹70</option>
+                    <option value="extra-large">Extra Large ₹100</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="aloo_prantha.jpg" alt="Aloo Paratha">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="bread" value="paratha"> Aloo Paratha</label>
+                  <select class="item-size" data-item="paratha">
+                    <option value="regular">Regular ₹80</option>
+                    <option value="large">Large ₹110</option>
+                    <option value="extra-large">Extra Large ₹140</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="veg_pulao.jpg" alt="Vegetable Pulao">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="bread" value="pulao"> Veg Pulao</label>
+                  <select class="item-size" data-item="pulao">
+                    <option value="regular">Regular ₹120</option>
+                    <option value="large">Large ₹150</option>
+                    <option value="extra-large">Extra Large ₹180</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-section">
+            <h4>Desserts</h4>
+            <div class="dish-options">
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="gulab_jamun.jpg" alt="Gulab Jamun">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="dessert" value="gulab-jamun"> Gulab Jamun</label>
+                  <select class="item-size" data-item="gulab-jamun">
+                    <option value="regular">Regular ₹120</option>
+                    <option value="large">Large ₹160</option>
+                    <option value="extra-large">Extra Large ₹200</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="rasmalai.jpg" alt="Rasmalai">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="dessert" value="rasmalai"> Rasmalai</label>
+                  <select class="item-size" data-item="rasmalai">
+                    <option value="regular">Regular ₹140</option>
+                    <option value="large">Large ₹180</option>
+                    <option value="extra-large">Extra Large ₹220</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="kheer.jpg" alt="Kheer">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="dessert" value="kheer"> Kheer</label>
+                  <select class="item-size" data-item="kheer">
+                    <option value="regular">Regular ₹100</option>
+                    <option value="large">Large ₹140</option>
+                    <option value="extra-large">Extra Large ₹180</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="jalebi.jpg" alt="Jalebi">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="dessert" value="jalebi"> Jalebi</label>
+                  <select class="item-size" data-item="jalebi">
+                    <option value="regular">Regular ₹80</option>
+                    <option value="large">Large ₹120</option>
+                    <option value="extra-large">Extra Large ₹160</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-section">
+            <h4>Beverages & Drinks</h4>
+            <div class="dish-options">
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="sweet_lassi.jpg" alt="Sweet Lassi">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="drink" value="lassi"> Sweet Lassi</label>
+                  <select class="item-size" data-item="lassi">
+                    <option value="regular">Regular  ₹80</option>
+                    <option value="large">Large  ₹100</option>
+                    <option value="extra-large">Extra Large  ₹120</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="mango_lassi.jpg" alt="Mango Lassi">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="drink" value="mango-lassi"> Mango Lassi</label>
+                  <select class="item-size" data-item="mango-lassi">
+                    <option value="regular">Regular  ₹100</option>
+                    <option value="large">Large  ₹120</option>
+                    <option value="extra-large">Extra Large  ₹140</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="masala_chai.jpg" alt="Masala Chai">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="drink" value="masala-chai"> Masala Chai</label>
+                  <select class="item-size" data-item="masala-chai">
+                    <option value="regular">Regular  ₹60</option>
+                    <option value="large">Large  ₹80</option>
+                    <option value="extra-large">Extra Large ₹100</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dish-item">
+                <div class="dish-image">
+                  <img src="moctails.jpg" alt="Mocktail">
+                </div>
+                <div class="dish-info">
+                  <label><input type="checkbox" name="drink" value="mocktail"> Mocktail</label>
+                  <select class="item-size" data-item="mocktail">
+                    <option value="regular">Regular ₹90</option>
+                    <option value="large">Large ₹110</option>
+                    <option value="extra-large">Extra Large ₹130</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="selection-step">
+        <h3>Step 3: Special Requests</h3>
+        <textarea id="special-requests" placeholder="Any dietary restrictions, allergies, or special preferences?"></textarea>
+      </div>
+
+      <div class="menu-actions">
+        <button class="cta-button" onclick="saveMenuSelection()">Save Selection</button>
+        <a href="booking.html" class="cta-button">Proceed to Booking</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; HiHa EXCLUSIVE DINER. All rights reserved.</p>
+  </footer>
+
+  <script src="alerts.js"></script>
+  <script>
+    function saveMenuSelection() {
+      const chef = document.getElementById('chef-select').value;
+      const specialRequests = document.getElementById('special-requests').value;
+      
+      if (!chef) {
+        showChefRequiredAlert();
+        return;
+      }
+      
+      // Save to localStorage for booking page
+      localStorage.setItem('selectedChef', chef);
+      localStorage.setItem('specialRequests', specialRequests);
+      
+      // Get selected dishes with their sizes
+      const selectedDishesWithSizes = [];
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        const itemName = checkbox.value;
+        const sizeSelect = document.querySelector(`select[data-item="${itemName}"]`);
+        const size = sizeSelect ? sizeSelect.value : 'regular';
+        
+        selectedDishesWithSizes.push({
+          item: itemName,
+          size: size
+        });
+      });
+      localStorage.setItem('selectedDishesWithSizes', JSON.stringify(selectedDishesWithSizes));
+      
+      showMenuSavedAlert();
+    }
+  </script>
+</body>
+</html> 
